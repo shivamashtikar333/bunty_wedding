@@ -3,8 +3,11 @@ import { ArrowDown, ArrowUpRight, CalendarDays, ChevronDown, Clock3, MapPin, Men
 import { COUPLE, EVENTS, FAQS, RSVP_DEADLINE, RSVP_FORM_URL, VENUE } from './constants/wedding.js';
 import logo from './assets/logo.jpg';
 
+// \uFE0E forces the plain-text star so iOS doesn't swap in a green emoji
+const STAR = '\u2733\uFE0E';
+
 function LogoPlaceholder() {
-  return <a className="logo" href="#home" aria-label="Wedding home"><span><img src={logo} alt="Wedding Logo" /></span></a>;
+  return <a className="logo" href="#home" aria-label="Wedding home"><img src={logo} alt="Wedding Logo" /></a>;
 }
 
 function Header() {
@@ -12,16 +15,16 @@ function Header() {
   const links = [['Wedding', '#wedding'], ['Venue', '#venue'], ['FAQs', '#faqs']];
 
   return <header className="site-header">
-  <LogoPlaceholder />
-  <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
-    {menuOpen ? <X size={19} /> : <Menu size={19} />}
-  </button>
-  <nav className={menuOpen ? 'navigation navigation-open' : 'navigation'} aria-label="Main navigation">
-    {links.map(([label, href]) => <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}
-    <a className="nav-rsvp" href="#rsvp" onClick={() => setMenuOpen(false)}>RSVP <ArrowUpRight size={14} /></a>
-  </nav>
-  <a className="header-rsvp" href="#rsvp">RSVP <ArrowUpRight size={14} /></a>
-</header>;
+    <LogoPlaceholder />
+    <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+      {menuOpen ? <X size={19} /> : <Menu size={19} />}
+    </button>
+    <nav className={menuOpen ? 'navigation navigation-open' : 'navigation'} aria-label="Main navigation">
+      {links.map(([label, href]) => <a key={label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}
+      <a className="nav-rsvp" href="#rsvp" onClick={() => setMenuOpen(false)}>RSVP <ArrowUpRight size={14} /></a>
+    </nav>
+    <a className="header-rsvp" href="#rsvp">RSVP <ArrowUpRight size={14} /></a>
+  </header>;
 }
 
 function Countdown() {
@@ -91,7 +94,7 @@ function Venue() {
       <a className="text-link" href={VENUE.mapUrl} target="_blank" rel="noreferrer">View on map <ArrowUpRight size={15} /></a>
     </div>
     <div className="venue-details">
-      <span className="venue-mark" aria-hidden="true">✳</span>
+      <span className="venue-mark" aria-hidden="true">{STAR}</span>
       <p className="eyebrow">WEDDING DAY</p>
       <h3><a className="venue-name-link" href={VENUE.mapUrl} target="_blank" rel="noreferrer">{VENUE.name}</a></h3>
       <p>{VENUE.address}</p>
@@ -135,7 +138,7 @@ function App() {
       <RSVP />
       <FAQs />
       <section className="closing">
-        <span className="closing-flower" aria-hidden="true">✳</span>
+        <span className="closing-flower" aria-hidden="true">{STAR}</span>
         <p className="eyebrow">WITH LOVE</p>
         <h2>We can’t wait to celebrate with you.</h2>
         <p>{COUPLE.groom} & {COUPLE.bride}</p>
@@ -146,4 +149,3 @@ function App() {
 }
 
 export default App;
-
