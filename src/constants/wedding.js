@@ -32,4 +32,8 @@ export const FAQS = [
   { question: 'Is parking available?', answer: 'Parking is available at the venue. Please allow extra time for Pune traffic.' },
   { question: 'At what time will food be served?', answer: 'Food will be served immediately after the wedding ceremony.' },
   { question: 'How do I get to the venue?', answer: 'Use the map link in the venue section for directions to Rajmudra Banquet.' },
+  {
+  question: 'Who can I contact if I face any trouble?',
+  answer: 'If you need any help before or on the day, please call Shivam at +91-9324072824.',
+},
 ];
