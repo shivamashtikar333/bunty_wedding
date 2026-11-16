@@ -1,16 +1,18 @@
-# React + Vite
+# Soham & Shraddha — Wedding invitation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An editorial wedding invitation built with React and Vite. The page includes the ceremony details, countdown, RSVP, scroll reveals, caricature placeholders, a guest photo area, and a later wedding album link.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+## Connect the shared photo album
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+In `src/constants/wedding.js`, set `PHOTO_DROP_URL` to the shared upload folder guests should use. For a Google Drive folder, choose its sharing and upload permissions to suit your guests before publishing the link. Guests use the Drive upload page to add their photos; the site's multi-photo picker is a local preview only. There is no application-side file count limit.
 
-## Expanding the ESLint configuration
+After the wedding, set `WEDDING_ALBUM_URL` in the same file to the published album link. The guest-facing album link will appear automatically.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The three illustrated portrait panels in the caricature section are intentional placeholders for the couple's final artwork.
