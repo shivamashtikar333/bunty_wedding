@@ -257,3 +257,7 @@ body{max-width:100%}
 /* ---- iOS: keep the ✳ star as a plain gold glyph, never the green emoji ---- */
 .wedding:before{content:none}
 .wordmark-flower,.tiny-star,.story-star,.memory-note>span,.finale-star,.rsvp-sparkle,.closing-flower,.card-rule>span{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',Menlo,sans-serif;font-variant-emoji:text}
+.couple-art-flower.flower-a{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',Menlo,sans-serif;font-variant-emoji:text}
+
+/* ---- Star is now an inline SVG (never turns into an emoji) ---- */
+.star-icon{display:inline-block;width:1em;height:1em;flex:none;vertical-align:-.12em;overflow:visible}
